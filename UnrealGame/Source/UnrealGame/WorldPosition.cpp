@@ -2,6 +2,7 @@
 
 
 #include "WorldPosition.h"
+#include "GameFramework/Actor.h"
 
 // Sets default values for this component's properties
 UWorldPosition::UWorldPosition()
@@ -17,10 +18,27 @@ UWorldPosition::UWorldPosition()
 // Called when the game starts
 void UWorldPosition::BeginPlay()
 {
+  
 	Super::BeginPlay();
+  int32 x = 0;
+  FString log = TEXT("Hello from the other side ");
+  FString *ptr = &log;
+  
+  /*UE_LOG(LogTemp, Error, TEXT("my num is %d") , x);
 
-	// ...
-	
+ 
+  UE_LOG(LogTemp, Error, TEXT("my num is %s"), *log);
+
+  UE_LOG(LogTemp, Error, TEXT("my num is  %s"), **ptr);*/
+// ...
+  FString name =GetOwner()->GetName();
+  UE_LOG(LogTemp, Error, TEXT("This object name is %S"), *name);
+  FVector objectPosition = GetOwner()->GetActorLocation();
+   
+  FString Vposition = objectPosition.ToString();
+
+  UE_LOG(LogTemp, Error, TEXT("My location is %s "), *Vposition);
+
 }
 
 
