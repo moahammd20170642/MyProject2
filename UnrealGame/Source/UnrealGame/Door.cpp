@@ -2,7 +2,6 @@
 
 
 #include "Door.h"
-
 // Sets default values for this component's properties
 UDoor::UDoor()
 {
@@ -17,6 +16,7 @@ UDoor::UDoor()
 // Called when the game starts
 void UDoor::BeginPlay()
 {
+  
 	Super::BeginPlay();
   AActor  * owner = GetOwner();
   FRotator NewRotation = FRotator(0.0f, 90.0f,0.0f);
@@ -29,7 +29,11 @@ void UDoor::BeginPlay()
   UE_LOG(LogTemp, Error, TEXT("my location is : %s "), *string);
 
 	// ..
+
 	
+
+
+ 
 }
 
 
@@ -37,7 +41,8 @@ void UDoor::BeginPlay()
 void UDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+  
+  UE_LOG(LogTemp, Error, TEXT("this integer = %d "), c);
 	// ...
 }
 
